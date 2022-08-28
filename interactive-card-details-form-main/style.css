@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+:root{
+    /* ### Primary */
+
+--Linear-gradient-active-input-border: rgb(100, 72, 254) to rgb(96, 5, 148);
+--Red-errors: hsl(0, 100%, 66%);
+
+/* ### Neutral */
+
+--White: hsl(0, 0%, 100%);
+--Light-grayish-violet: hsl(270, 3%, 87%);
+--Dark-grayish-violet: hsl(279, 6%, 55%);
+--Very-dark-violet: hsl(278, 68%, 11%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+body{
+    background-image: url(images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: 25% 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-main{
+    width: 80%;
+    margin: 2rem;
+    display: flex;
+    position: relative;
+}
+.left{
+    display: flex;
+    flex-direction:column;
+    align-items:flex-end;
+    position: relative;
+    width: 50%;
+}
+.card{
+    display: flex;
+    flex-direction:column;
+    position: relative;
+    margin: 2rem;
+    padding: 2rem;
+    height: 15.3rem;
+    width: 27.8rem;
+    border-radius: 10px;
+    box-shadow: 15px 20px 50px rgb(0, 0, 0,0.5);
+    transition: all 1s ease;
+    /* border: 1px solid blue; */
+}
+.header-dot {
+    display: flex;
+    align-items: center;
+}
+.header-dot .img-dot1{
+    margin-right:1rem;
+    width: 49px;
+    height: 49px;
+    background-color: white;
+    border-radius: 50%;
+}
+.header-dot .img-dot2{
+    width: 23px;
+    height: 23px;
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: 50%;
+}
+.card.up{
+    transition: all 1s ease;
+    position: relative;
+    right: 7rem;
+    background-image: url('images/bg-card-front.png');
+}
+.card.up p.accountNumber{
+    color: white;
+    letter-spacing:2.5px;
+    margin-top:3rem;
+    font-size: 1.87rem;
+}
+.card.up .footer{
+    margin-top:2rem;
+    font-size: 0.8rem;
+    text-transform:uppercase;
+    color: white;
+    display:flex;
+    justify-content: space-between;
+}
+
+.card.down{
+    transition: all 1s ease;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-image: url('images/bg-card-back.png');
+}
+.card.down .card-CVC{
+    width: 360px;
+    height: 38px;
+    color: white;
+    text-align: right;
+    position: relative;
+    right: 15px;
+    top: 6px;
+    border-radius: 5px;
+}
+.right{
+    animation: fadeInUp 1.5s ease;
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+    max-width: 50%;
+    transition: all 1s ease;
+}
+.right.warpped{
+    position: relative;
+    animation: fadeInUp 1.5s ease;
+    padding: 8rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.right.warpped :where(p,img){
+    margin-bottom: 3rem;
+}
+.right.warpped .thank{
+    font-size: 2rem;
+    color: var(--Very-dark-violet);
+}
+.right.warpped .WeAdd{
+    color: var(--Dark-grayish-violet);
+}
+.right .input-group-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.right .input-group.g1{
+    display: flex;
+    flex-direction: column;
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.right .input-group.g2{
+    display: flex;
+    flex-direction: column;
+    grid-column-start: 1;
+}
+.right .input-group.g2 .input-group-date{
+    display: flex;
+    flex-direction: row;
+}
+
+.right .input-group.g2 .input-group-date input{
+    width: 40%;
+    margin-right: 1rem;
+}
+.right .input-group.g3{
+    display: flex;
+    flex-direction: column; 
+    grid-column-start: 2;
+}
+.right input{
+    border-radius: 8px;
+    border: 2px solid #bfbfbf;
+    height: 47px;
+    font-size: 18px;
+    padding-left: .8rem;
+    width: 100%;
+}
+.right input:focus{
+    animation: borderanimate 4s ease infinite;
+    outline: none;
+}
+@keyframes borderanimate{
+    0%{
+        border-color:rgb(100, 72, 254);
+    }
+    50%{
+        border-color:rgb(96, 5, 148);
+    }
+    100%{
+        border-color:rgb(100, 72, 254);
+    }
+}
+.btn-confirm{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    color: white;
+    cursor:pointer;
+    text-decoration:none;
+    text-align: center;
+    padding: 1rem 0;
+    height: 56px;
+    border-radius: 9px;
+    background-color: var(--Very-dark-violet);
+    transition: all 0.3s ease;
+}
+.btn-continue{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    color: white;
+    cursor:pointer;
+    text-decoration:none;
+    text-align: center;
+    padding: 1rem 0;
+    height: 56px;
+    border-radius: 9px;
+    background-color: var(--Very-dark-violet);
+    width: 100%;
+    transition: all 0.3s ease;
+
+}
+:where(.btn-confirm,.btn-continue):hover{
+    position: relative;
+    top: -7px;
+    left: -7px;
+    box-shadow: 7px 6px 10px rgb(0, 0, 0,0.3);
+}
+
+.mgt{
+    margin-top: 1.5rem;
+}
+.mbb{
+    margin-bottom: .5rem;
+}
+
+input.inputError{
+    border: 2px solid var(--Red-errors);
+}
+label:where(.mesg-CVC,.mesg-card,.mesg-Date){
+    font-size: 0px;
+    transition: all 0.4s ease;
+}
+label.error{
+    margin-top: 0.3rem;
+    color: var(--Red-errors);
+    font-size: 10px;
+}
+@media only screen and (max-width:993px) {
+    body{
+        background-image: url(images/bg-main-mobile.png);
+        background-size: 100vw 40vh;
+    }
+    .card:where(.up,.down){
+        margin: 0;
+    }
+    .card.up{
+        top:195px;
+        left: -29px;
+        z-index: 1;
+        box-shadow: 8px 8px 25px rgb(0, 0, 0,0.5);
+    }
+    .card.down{
+        left: 10px;
+        bottom: 200px;
+    }
+    .card{
+        box-shadow: none;
+        left: 0;
+
+    }
+    .left{
+        align-items: center;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .right{
+        position: relative;
+        padding: 0;
+        max-width: 100%;
+    }
+    .container-main{
+        margin: 0;
+        padding: 1rem;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width:480px){
+    .card{
+        transform: scale(0.7);
+    }
+}
+@media only screen and (max-width:375px){
+    .card.up{
+        left: -15px;
+    }
+}
+@keyframes fadeInUp{
+    0%{
+        opacity: 0;
+        top: 12.5rem;
+    }
+    100%{
+        opacity: 1;
+        top: 0;
+    }
+}

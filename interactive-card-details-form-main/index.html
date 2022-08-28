@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+
+<body>
+  <div class="container-main">
+    <section class="left">
+      <div class="card up">
+        <figure class="header-dot">
+          <div class="img-dot1"></div>
+          <div class="img-dot2"></div>
+        </figure>
+        <p class="accountNumber">0000 0000 0000 0000</p>
+        <div class="footer">
+          <p class="Fullname">Jane Appleseed</p>
+          <p class="ExpDate">00/00</p>
+        </div>
+      </div>
+      <div class="card down">
+        <p type="text" class="card-CVC">000</p>
+      </div>
+    </section>
+    <section class="right">
+      <div class="input-group-grid">
+        <div class="input-group g1">
+          <label for="CardHolder-Name" class="mbb">Cardholder Name</label>
+          <input type="text" class="limited" placeholder="e.g. Jane Appleseed" id="CardHolder-Name">
+        </div>
+        <div class="input-group g1 mgt">
+          <label for="Card-Number" class="mbb">Card Number</label>
+          <input type="text" class="limited" placeholder="e.g. 1234 5678 9123 0000" id="Card-Number" maxlength="16"
+            pattern="[0-9]+">
+          <label class="mesg-card" for="asd">Wrong format, numbers only</label>
+        </div>
+        <div class="input-group g2 mgt">
+          <label for="month" class="mbb">Exp. Date (MM/YY)</label>
+          <div class="input-group-date ">
+            <input type="text" class="limited" placeholder="MM" id="months" maxlength="2">
+            <input type="text" class="limited" placeholder="YY" id="years" maxlength="2">
+          </div>
+          <label class="mesg-Date">Can't be blank or Number only</label>
+        </div>
+        <div class="input-group g3 mgt">
+          <label class="mbb" for="CVC ">CVC</label>
+          <input type="text" class="limited" placeholder="e.g. 123" id="CVC" maxlength="3">
+          <label class="mesg-CVC">Can't be blank or Number only</label>
+        </div>
+        <div class="input-group g1 mgt">
+          <a class="btn-confirm">Confirm</a>
+        </div>
+      </div>
+    </section>
+    <section class="right warpped">
+      <img src="images/icon-complete.svg" alt="">
+      <p class="thank">THANK YOU!</p>
+      <p class="WeAdd">We've added your card details</p>
+      <a class="btn-continue">Continue</a>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
